@@ -1,0 +1,1421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puan Hesaplayıcı</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            height:auto;
+        }
+
+        /* Genel stil */
+        .content {
+            text-align: center;
+        }
+
+        /* Buton stili */
+        .button {
+            padding: 10px 20px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #1e561b;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+            width: 100px;
+            
+        }
+        .button2 {
+            padding: 10px 20px;
+            font-size: 15px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #1e561b;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+            width: 175px;
+        }
+        .button:hover {
+            background-color: #0b9717;
+        }
+
+        /* Gizli içerik */
+        .hidden {
+            display: none;
+        }
+ /* Logo Stili */
+.logo {
+    position: fixed; /* Sayfada sabitlenir */
+    bottom: 10px; /* Sağ alt köşeden 10px yukarı */
+    right: 10px; /* Sağ alt köşeden 10px sola */
+    background-color: #c5e0ff; /* Logo için mavi arka plan */
+    color: rgb(0, 0, 0); /* Yazı rengi beyaz */
+    font-size: 14px; /* Yazı boyutu */
+    font-weight: bold; /* Kalın yazı */
+    padding: 8px 12px; /* İç boşluk */
+    border-radius: 5px; /* Köşeleri yuvarlama */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Hafif gölge */
+    z-index: 1000; /* Diğer içeriklerin üstünde göster */
+    text-align: center; /* Yazıyı ortala */
+    cursor: pointer; /* Üzerine gelince el işareti */
+}
+
+    </style>
+</head>
+<body>
+    <!-- Ana İçerik -->
+    <div id="main-content" class="content">
+        <h1 style="color: #F2F200 ;">Ege Üniversitesi Tıp Fakültesi Puan Hesaplama Sistemine Hoş Geldiniz!</h1>
+        <h3 style="color: #a6a66f ;">(Enter: Hesapla - Space: Sıfırla)</h3>
+        <button class="button" onclick="showTarget2()">E1B1</button>
+        <button class="button" onclick="showTarget()">E2B3</button>
+        <button class="button" onclick="showTarget3()">E2B4</button>
+        <button class="button" onclick="showTarget5()">E3B1</button>
+        <button class="button" onclick="showTarget6()">E4B1</button>
+        <button class="button" onclick="showTarget4()">YSYS</button>
+    </div>
+
+    <!-- Hedef İçerik e2b3 -->
+    <div id="target-content" class="content hidden">
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>E2B3</title>
+            <style>
+            /* Genel stil */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #3f3ffb; /* Açık gri bir arka plan rengi */
+            color: #333; /* Yazılar koyu gri */
+        }
+        
+        /* Ana kapsayıcı */
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #fce19d; /* Beyaz arka plan */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden; /* Taşmayı engelle */
+            box-sizing: border-box;
+        }
+        
+        /* Başlık stili */
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #007BFF; /* Mavi renk başlık */
+        }
+        
+        /* Giriş alanı grubu */
+        .input-group {
+            margin-bottom: 15px;
+        }
+        
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            font-size: 16px;
+            color: #333; /* Koyu gri etiket */
+        }
+        
+        .input-group input {
+            width: 100%; /* Kapsayıcının genişliğini aşmaz */
+            max-width: 100%; /* Taşmayı tamamen engeller */
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ddd; /* İnce bir kenarlık */
+            border-radius: 5px;
+            box-sizing: border-box; /* Padding ve genişlik çakışmasını engeller */
+            background-color: #f9f9f9; /* Hafif gri arka plan */
+            color: #333; /* Koyu gri metin */
+        }
+        
+        /* Hesaplama butonu */
+        button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+        
+        /* Sonuç kutusu */
+        .result {
+            margin-top: 15px;
+            padding: 10px;
+            background: #aaffc8; /* Hafif gri arka plan */
+            color: #242424; /* Siyah yazı */
+            border-radius: 5px;
+            text-align: center;
+            border: 1px solid #ebebeb; /* İnce bir kenarlık */
+        }
+        
+        /* Mobil uyum için medya sorguları */
+        @media screen and (max-width: 600px) {
+            .container {
+                margin: 20px;
+                padding: 15px;
+            }
+            h1 {
+                font-size: 20px;
+            }
+            button {
+                font-size: 14px;
+            }
+        }
+        
+        
+        
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <h2>E2B3 Blok Sonu Başarı Puanı Hesaplama</h2>
+                <div class="input-group">
+                    <label for="bas1">Bas 1 Notunuzu Giriniz:</label>
+                    <input type="number" id="bas1" placeholder="Notunuzu girin">
+                </div>
+                <div class="input-group">
+                    <label for="bas2">Bas 2 Notunuzu Giriniz:</label>
+                    <input type="number" id="bas2" placeholder="Notunuzu girin">
+                </div>
+                <div class="input-group">
+                    <label for="hist">Histoloji Uygulama Notunuzu Giriniz:</label>
+                    <input type="number" id="hist" placeholder="Notunuzu girin">
+                </div>
+                <div class="input-group">
+                    <label for="fiz">Fizyoloji Uygulama Notunuzu Giriniz:</label>
+                    <input type="number" id="fiz" placeholder="Notunuzu girin">
+                </div>
+                <div class="input-group">
+                    <label for="ant">Anatomi Uygulama Notunuzu Giriniz:</label>
+                    <input type="number" id="ant" placeholder="Notunuzu girin">
+                </div>
+                <div class="input-group">
+                    <label for="bys">BYS Notunuzu Giriniz:</label>
+                    <input type="number" id="bys" placeholder="Notunuzu girin">
+                </div>
+                <button id="calculateBtn">Hesapla</button>
+                <div class="result" id="result"></div>
+            </div>
+            <script>
+                 function calculater4() {
+            // Kullanıcıdan değeri al
+            const bas1 = document.getElementById("bas1").value;
+            const bas2 = document.getElementById("bas2").value;
+            const hist = document.getElementById("hist").value;
+            const fiz = document.getElementById("fiz").value;
+            const ant = document.getElementById("ant").value;
+            const bys = document.getElementById("bys").value;
+        
+        
+            // Eğer değer boş ise uyarı ver
+            if (!bas1 || !bas2 || !hist || !fiz || !ant || !bys ) {
+                document.getElementById("result").innerText = "Lütfen Puanınızı giriniz!";
+                return;
+            }
+            // İşlemi gerçekleştir (örneğin, sayının karesini hesapla)
+            a=((parseFloat(bas1) + parseFloat(bas2))/2)/4
+            b= ((parseFloat(hist)*30)/100 + (parseFloat(fiz)*15)/100 + (parseFloat(ant)*55)/100)/4
+            c= parseFloat(bys)/2
+            const result = a + b + c ;
+        
+            if (result>=59.5) {
+                document.getElementById("result").innerText = `Tebrikler Bloğu Geçtiniz. Puanınız: ${result}`;
+                return;
+            }
+            else{
+                document.getElementById("result").innerText = `Puanınız: ${result}`;
+            }
+        }
+        function sifirla4(){
+             bas1.value ="";
+             bas2.value ="";
+             hist.value ="";
+             fiz.value ="";
+             ant.value ="";
+             bys.value ="";
+             result.innerText="";
+        }
+                 document.getElementById("calculateBtn").addEventListener("click",calculater4);
+                 document.addEventListener("keydown", function(event) {
+                if (event.key === "Enter") {
+                 calculater4();
+                }else if (event.key === " ") {
+        event.preventDefault(); 
+        sifirla4();
+       }
+                });
+        
+        
+            </script>
+            
+        
+        </body>
+        </html>       
+        <button class="button2" onclick="showMain()">Ana Sayfaya Dön</button>
+    </div>
+
+    <!-- Hedef İçerik e4b1 -->
+    <div id="target-content6" class="content hidden">
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>E2B4</title>
+            <style>
+            /* Genel stil */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #3f3ffb; /* Açık gri bir arka plan rengi */
+            color: #333; /* Yazılar koyu gri */
+        }
+        
+        /* Ana kapsayıcı */
+        .containerAy {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #c9b4f8; /* Beyaz arka plan */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden; /* Taşmayı engelle */
+            box-sizing: border-box;
+        }
+        
+        /* Başlık stili */
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #007BFF; /* Mavi renk başlık */
+        }
+        
+        /* Giriş alanı grubu */
+        .input-group {
+            margin-bottom: 15px;
+        }
+        
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            font-size: 16px;
+            color: #333; /* Koyu gri etiket */
+        }
+        
+        .input-group input {
+            width: 100%; /* Kapsayıcının genişliğini aşmaz */
+            max-width: 100%; /* Taşmayı tamamen engeller */
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ddd; /* İnce bir kenarlık */
+            border-radius: 5px;
+            box-sizing: border-box; /* Padding ve genişlik çakışmasını engeller */
+            background-color: #f9f9f9; /* Hafif gri arka plan */
+            color: #333; /* Koyu gri metin */
+        }
+        
+        /* Hesaplama butonu */
+        button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+        
+        /* Sonuç kutusu */
+        .resultxAy {
+            margin-top: 15px;
+            padding: 10px;
+            background: #f3ffc6; /* Hafif gri arka plan */
+            color: #242424; /* Siyah yazı */
+            border-radius: 5px;
+            text-align: center;
+            border: 1px solid #ebebeb; /* İnce bir kenarlık */
+        }
+        
+        /* Mobil uyum için medya sorguları */
+        @media screen and (max-width: 600px) {
+            .containerAy {
+                margin: 20px;
+                padding: 15px;
+            }
+            h1 {
+                font-size: 20px;
+            }
+            button {
+                font-size: 14px;
+            }
+        }
+        
+        
+        
+            </style>
+        </head>
+        <body>
+            <div class="containerAy">
+                <h2>E4B1 Blok Sonu Başarı Puanı Hesaplama</h2>
+                <div class="input-group">
+                    <label for="bas1xAy">Bas 1 Notunuzu Giriniz:</label>
+                    <input type="number" id="bas1xAy" placeholder="Notunuzu girin">
+                </div>
+                <div class="input-group">
+                    <label for="bas2xAy">Bas 2 Notunuzu Giriniz:</label>
+                    <input type="number" id="bas2xAy" placeholder="Notunuzu girin">
+                </div>
+                <div class="input-group">
+                    <label for="bas3xAy">Bas 3 Notunuzu Giriniz:</label>
+                    <input type="number" id="bas3xAy" placeholder="Notunuzu girin">
+                </div>
+                <div class="input-group">
+                    <label for="KanAlma">Kan Alma Uygulama Notunuzu Giriniz:</label>
+                    <input type="number" id="KanAlma" placeholder="Notunuzu girin">
+                </div>
+                <div class="input-group">
+                    <label for="HalkSagligi">Halk Sağlığı Uygulama Notunuzu Giriniz:</label>
+                    <input type="number" id="HalkSagligi" placeholder="Notunuzu girin">
+                </div>
+                <div class="input-group">
+                    <label for="Patoloji">Patoloji Uygulama Notunuzu Giriniz:</label>
+                    <input type="number" id="Patoloji" placeholder="Notunuzu girin">
+                </div>
+                <div class="input-group">
+                    <label for="BYS">BYS Notunuzu Giriniz:</label>
+                    <input type="number" id="BYS" placeholder="Notunuzu girin">
+                </div>
+                <button id="calculateBtnxAy">Hesapla</button>
+                <div class="resultxAy" id="resultxAy"></div>
+            </div>
+            <script>
+                 function calculater4() {
+            // Kullanıcıdan değeri al
+            const bas1xAy = document.getElementById("bas1xAy").value;
+            const bas2xAy = document.getElementById("bas2xAy").value;
+            const bas3xAy = document.getElementById("bas3xAy").value;
+            const KanAlma = document.getElementById("KanAlma").value;
+            const HalkSagligi = document.getElementById("HalkSagligi").value;
+            const Patoloji = document.getElementById("Patoloji").value;
+            const BYS = document.getElementById("BYS").value;
+        
+        
+            // Eğer değer boş ise uyarı ver
+            if (!bas1xAy || !bas2xAy || !bas3xAy || !KanAlma || !HalkSagligi || !Patoloji || !BYS ) {
+                document.getElementById("resultxAy").innerText = "Lütfen Puanınızı giriniz!";
+                return;
+            }
+            // İşlemi gerçekleştir (örneğin, sayının karesini hesapla)
+            a=((parseFloat(bas1xAy) + parseFloat(bas2xAy)+parseFloat(bas3xAy))/3)/4
+            b= ((parseFloat(KanAlma)*18.5)/100 + (parseFloat(HalkSagligi)*20)/100 + (parseFloat(Patoloji)*61.5)/100)/4
+            c= parseFloat(BYS)/2
+            const resultxAy = a + b + c ;
+        
+            if (resultxAy>=59.5) {
+                document.getElementById("resultxAy").innerText = `Tebrikler Bloğu Geçtiniz. Puanınız: ${resultxAy}`;
+                return;
+            }
+            else{
+                document.getElementById("resultxAy").innerText = `Puanınız: ${resultxAy}`;
+            }
+        }
+        function sifirla4(){
+             bas1xAy.value="";
+             bas2xAy.value="";
+             bas3xAy.value="";
+             KanAlma.value="";
+             HalkSagligi.value="";
+             Patoloji.value="";
+             BYS.value="";
+             resultxAy.innerText="";
+        }
+                 document.getElementById("calculateBtnxAy").addEventListener("click",calculater4);
+        document.addEventListener("keydown", function(event) {
+      if (event.key === "Enter") {
+        calculater4();
+      }else if (event.key === " ") {
+        event.preventDefault(); 
+        sifirla4();
+       }
+    });
+            </script>
+        </body>
+        </html>
+        <button class="button2" onclick="showMain()">Ana Sayfaya Dön</button>
+    </div>
+
+    <!-- Hedef İçerik-3 e2b4 -->
+    <div id="target-content3" class="content hidden">
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>E2B4</title>
+            <style>
+            /* Genel stil */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #3f3ffb; /* Açık gri bir arka plan rengi */
+            color: #333; /* Yazılar koyu gri */
+        }
+        
+        /* Ana kapsayıcı */
+        .containerz {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #b4daf8; /* Beyaz arka plan */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden; /* Taşmayı engelle */
+            box-sizing: border-box;
+        }
+        
+        /* Başlık stili */
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #007BFF; /* Mavi renk başlık */
+        }
+        
+        /* Giriş alanı grubu */
+        .input-group {
+            margin-bottom: 15px;
+        }
+        
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            font-size: 16px;
+            color: #333; /* Koyu gri etiket */
+        }
+        
+        .input-group input {
+            width: 100%; /* Kapsayıcının genişliğini aşmaz */
+            max-width: 100%; /* Taşmayı tamamen engeller */
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ddd; /* İnce bir kenarlık */
+            border-radius: 5px;
+            box-sizing: border-box; /* Padding ve genişlik çakışmasını engeller */
+            background-color: #f9f9f9; /* Hafif gri arka plan */
+            color: #333; /* Koyu gri metin */
+        }
+        
+        /* Hesaplama butonu */
+        button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+        
+        /* Sonuç kutusu */
+        .resultx {
+            margin-top: 15px;
+            padding: 10px;
+            background: #f3ffc6; /* Hafif gri arka plan */
+            color: #242424; /* Siyah yazı */
+            border-radius: 5px;
+            text-align: center;
+            border: 1px solid #ebebeb; /* İnce bir kenarlık */
+        }
+        
+        /* Mobil uyum için medya sorguları */
+        @media screen and (max-width: 600px) {
+            .containerz {
+                margin: 20px;
+                padding: 15px;
+            }
+            h1 {
+                font-size: 20px;
+            }
+            button {
+                font-size: 14px;
+            }
+        }
+        
+        
+        
+            </style>
+        </head>
+        <body>
+            <div class="containerz">
+                <h2>E2B4 Blok Sonu Başarı Puanı Hesaplama</h2>
+                <div class="input-group">
+                    <label for="bas1x">Bas 1 Notunuzu Giriniz:</label>
+                    <input type="number" id="bas1x" placeholder="Notunuzu girin">
+                </div>
+                <div class="input-group">
+                    <label for="bas2x">Bas 2 Notunuzu Giriniz:</label>
+                    <input type="number" id="bas2x" placeholder="Notunuzu girin">
+                </div>
+                <div class="input-group">
+                    <label for="histx">Histoloji Uygulama Notunuzu Giriniz:</label>
+                    <input type="number" id="histx" placeholder="Notunuzu girin">
+                </div>
+                <div class="input-group">
+                    <label for="has">Halk Sağlığı Uygulama Notunuzu Giriniz:</label>
+                    <input type="number" id="has" placeholder="Notunuzu girin">
+                </div>
+                <div class="input-group">
+                    <label for="antx">Anatomi Uygulama Notunuzu Giriniz:</label>
+                    <input type="number" id="antx" placeholder="Notunuzu girin">
+                </div>
+                <div class="input-group">
+                    <label for="bysx">BYS Notunuzu Giriniz:</label>
+                    <input type="number" id="bysx" placeholder="Notunuzu girin">
+                </div>
+                <button id="calculateBtnx">Hesapla</button>
+                <div class="resultx" id="resultx"></div>
+            </div>
+            <script>
+                 function calculater3() {
+            // Kullanıcıdan değeri al
+            const bas1x = document.getElementById("bas1x").value;
+            const bas2x = document.getElementById("bas2x").value;
+            const histx = document.getElementById("histx").value;
+            const has = document.getElementById("has").value;
+            const antx = document.getElementById("antx").value;
+            const bysx = document.getElementById("bysx").value;
+        
+        
+            // Eğer değer boş ise uyarı ver
+            if (!bas1x || !bas2x || !histx || !has || !antx || !bysx ) {
+                document.getElementById("resultx").innerText = "Lütfen Puanınızı giriniz!";
+                return;
+            }
+            // İşlemi gerçekleştir (örneğin, sayının karesini hesapla)
+            a=((parseFloat(bas1x) + parseFloat(bas2x))/2)/4
+            b= ((parseFloat(histx)*66)/100 + (parseFloat(has)*20)/100 + (parseFloat(antx)*14)/100)/4
+            c= parseFloat(bysx)/2
+            const resultx = a + b + c ;
+        
+            if (resultx>=59.5) {
+                document.getElementById("resultx").innerText = `Tebrikler Bloğu Geçtiniz. Puanınız: ${resultx}`;
+                return;
+            }
+            else{
+                document.getElementById("resultx").innerText = `Puanınız: ${resultx}`;
+            }
+        }
+        function sifirla3(){
+             bas1x.value="";
+             bas2x.value="";
+             histx.value="";
+             has.value="";
+             antx.value="";
+             bysx.value="";
+             resultx.innerText="";
+        }
+                 document.getElementById("calculateBtnx").addEventListener("click",calculater3);
+        document.addEventListener("keydown", function(event) {
+      if (event.key === "Enter") {
+        calculater3();
+      }else if (event.key === " ") {
+        event.preventDefault(); 
+        sifirla3();
+       }
+    });
+            </script>
+        </body>
+        </html>
+        <button class="button2" onclick="showMain()">Ana Sayfaya Dön</button>
+    </div>
+
+    <!-- Hedef İçerik-5 E3B1  -->
+    <div id="target-content5" class="content hidden">
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>E3B1</title>
+            <style>
+            /* Genel stil */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #3f3ffb; /* Açık gri bir arka plan rengi */
+            color: #333; /* Yazılar koyu gri */
+        }
+        
+        /* Ana kapsayıcı */
+        .containereb {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #c7c6c6; /* Beyaz arka plan */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden; /* Taşmayı engelle */
+            box-sizing: border-box;
+        }
+        
+        /* Başlık stili */
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #007BFF; /* Mavi renk başlık */
+        }
+        
+        /* Giriş alanı grubu */
+        .input-group {
+            margin-bottom: 15px;
+        }
+        
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            font-size: 16px;
+            color: #333; /* Koyu gri etiket */
+        }
+        
+        .input-group input {
+            width: 100%; /* Kapsayıcının genişliğini aşmaz */
+            max-width: 100%; /* Taşmayı tamamen engeller */
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ddd; /* İnce bir kenarlık */
+            border-radius: 5px;
+            box-sizing: border-box; /* Padding ve genişlik çakışmasını engeller */
+            background-color: #f9f9f9; /* Hafif gri arka plan */
+            color: #333; /* Koyu gri metin */
+        }
+        
+        /* Hesaplama butonu */
+        button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+        
+        /* Sonuç kutusu */
+        .resulteb {
+            margin-top: 15px;
+            padding: 10px;
+            background: #f3ffc6; /* Hafif gri arka plan */
+            color: #242424; /* Siyah yazı */
+            border-radius: 5px;
+            text-align: center;
+            border: 1px solid #ebebeb; /* İnce bir kenarlık */
+        }
+        
+        /* Mobil uyum için medya sorguları */
+        @media screen and (max-width: 600px) {
+            .containereb {
+                margin: 20px;
+                padding: 15px;
+            }
+            h1 {
+                font-size: 20px;
+            }
+            button {
+                font-size: 14px;
+            }
+        }
+        
+        
+        
+            </style>
+        </head>
+        <body>
+            <div class="containereb">
+                <h2>E3B1 Blok Sonu Başarı Puanı Hesaplama</h2>
+                <div class="input-group">
+                    <label for="bas1eb">Bas 1 Notunuzu Giriniz:</label>
+                    <input type="number" id="bas1eb" placeholder="Notunuzu girin">
+                </div>
+                <div class="input-group">
+                    <label for="bas2eb">Bas 2 Notunuzu Giriniz:</label>
+                    <input type="number" id="bas2eb" placeholder="Notunuzu girin">
+                </div>
+                <div class="input-group">
+                    <label for="mikrob">Mikrobiyoloji Uygulama Notunuzu Giriniz:</label>
+                    <input type="number" id="mikrob" placeholder="Notunuzu girin">
+                </div>
+                <div class="input-group">
+                    <label for="bioche">Biyokimya Uygulama Notunuzu Giriniz:</label>
+                    <input type="number" id="bioche" placeholder="Notunuzu girin">
+                </div>
+                <div class="input-group">
+                    <label for="paraz">Parazitoloji Uygulama Notunuzu Giriniz:</label>
+                    <input type="number" id="paraz" placeholder="Notunuzu girin">
+                </div>
+
+            
+                <div class="input-group">
+                    <label for="tsa">Toplum Sağlığı Uygulama Notunuzu Giriniz:</label>
+                    <input type="number" id="tsa" placeholder="Notunuzu girin">
+                </div>
+                <div class="input-group">
+                    <label for="pato">Patoloji Uygulama Notunuzu Giriniz:</label>
+                    <input type="number" id="pato" placeholder="Notunuzu girin">
+                </div>
+                <div class="input-group">
+                    <label for="radyo">Radyoloji Uygulama Notunuzu Giriniz:</label>
+                    <input type="number" id="radyo" placeholder="Notunuzu girin">
+                </div>
+                <div class="input-group">
+                    <label for="parzt">Parazitoloji Beceri Notunuzu Giriniz:</label>
+                    <input type="number" id="parzt" placeholder="Notunuzu girin">
+                </div>
+
+
+                <div class="input-group">
+                    <label for="byseb">BYS Notunuzu Giriniz:</label>
+                    <input type="number" id="byseb" placeholder="Notunuzu girin">
+                </div>
+                <button id="calculateBtneb">Hesapla</button>
+                <div class="resulteb" id="resulteb"></div>
+            </div>
+            <script>
+
+                 function calculater2() {
+            // Kullanıcıdan değeri al
+            const bas1eb = document.getElementById("bas1eb").value;
+            const bas2eb = document.getElementById("bas2eb").value;
+            const mikrob = document.getElementById("mikrob").value;
+            const bioche = document.getElementById("bioche").value;
+            const paraz = document.getElementById("paraz").value;
+            const tsa = document.getElementById("tsa").value;
+            const pato = document.getElementById("pato").value;
+            const radyo = document.getElementById("radyo").value;
+            const parzt = document.getElementById("parzt").value;
+
+            const byseb = document.getElementById("byseb").value;
+        
+        
+            // Eğer değer boş ise uyarı ver
+            if (!bas1eb || !bas2eb || !mikrob || !bioche || !paraz || !byseb || !tsa || !pato || !radyo || !parzt ) {
+                document.getElementById("resulteb").innerText = "Lütfen Puanınızı giriniz!";
+                return;
+            }
+            // İşlemi gerçekleştir (örneğin, sayının karesini hesapla)
+            a=((parseFloat(bas1eb) + parseFloat(bas2eb))/2)/4
+            b= ((parseFloat(mikrob)*20)/100 + (parseFloat(bioche)*(11.42))/100 + (parseFloat(paraz)*(14.30))/100 
+              + (parseFloat(tsa)*(2.86))/100 + (parseFloat(pato)*(28.58))/100 + (parseFloat(radyo)*(11.42))/100 + (parseFloat(parzt)*(11.42))/100  )/4
+            c= parseFloat(byseb)/2
+            const resulteb = a + b + c ;
+        
+            if (resulteb>=59.5) {
+                document.getElementById("resulteb").innerText = `Tebrikler Bloğu Geçtiniz. Puanınız: ${resulteb}`;
+                return;
+            }
+            else{
+                document.getElementById("resulteb").innerText = `Puanınız: ${resulteb}`;
+            }
+        }
+        function sifirla2(){
+             bas1eb.value="";
+             bas2eb.value="";
+             mikrob.value="";
+             bioche.value="";
+             paraz.value="";
+             tsa.value="";
+             pato.value="";
+             radyo.value="";
+             parzt.value="";
+             byseb.value="";
+             resulteb.innerText="";
+        }
+
+            document.addEventListener("keydown", function(event) {
+      if (event.key === "Enter") {
+        calculater2();
+      }else if (event.key === " ") {
+        event.preventDefault(); 
+        sifirla2();
+       }
+    });
+             document.getElementById("calculateBtneb").addEventListener("click",calculater2);
+            </script>
+        </body>
+        </html>
+        <button class="button2" onclick="showMain()">Ana Sayfaya Dön</button>
+    </div>
+
+    <!-- Hedef İçerik-2 e1b1 -->
+    <div id="target-content2" class="content hidden">
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>E1B1</title>
+            <style>
+            /* Genel stil */
+        body { /* ana renk burda<-----------*/
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #432746; /* Açık gri bir arka plan rengi */
+            color: #333; /* Yazılar koyu gri */
+            
+        }
+        
+        /* Ana kapsayıcı */
+        .container1 {
+            max-width: 500px;
+            margin: 60px auto;
+            padding: 30px;
+            background: #faa9b8; /* Beyaz arka plan */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden; /* Taşmayı engelle */
+            box-sizing: border-box;
+            
+            
+        }
+        
+        /* Başlık stili */
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #007BFF; /* Mavi renk başlık */
+        }
+        
+        /* Giriş alanı grubu */
+        .input-group1 {
+            margin-bottom: 15px;
+        }
+        
+        .input-group1 label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            font-size: 16px;
+            color: #333; /* Koyu gri etiket */
+        }
+        
+        .input-group1 input {
+            width: 100%; /* Kapsayıcının genişliğini aşmaz */
+            max-width: 100%; /* Taşmayı tamamen engeller */
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ddd; /* İnce bir kenarlık */
+            border-radius: 7px;
+            box-sizing: border-box; /* Padding ve genişlik çakışmasını engeller */
+            background-color: #f9f9f9; /* Hafif gri arka plan */
+            color: #333; /* Koyu gri metin */
+        }
+        
+        /* Hesaplama butonu */
+        button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+        
+        /* Sonuç kutusu */
+        .resultx1 {
+            margin-top: 15px;
+            padding: 10px;
+            background: #bffff0; /* Hafif gri arka plan */
+            color: #242424; /* Siyah yazı */
+            border-radius: 10px;
+            text-align: center;
+            
+            border: 1px solid #442df4; /* İnce bir kenarlık */
+        }
+        
+        /* Mobil uyum için medya sorguları */
+        @media screen and (max-width: 800px) {
+            .container1 {
+                margin: 20px;
+                padding: 15px;
+            }
+            h1 {
+                font-size: 20px;
+            }
+            button {
+                font-size: 14px;
+            }
+        }
+        
+            </style>
+        </head>
+        <body>
+            <div class="container1">
+                <h2>E1B1 Blok Sonu Başarı Puanı Hesaplama</h2>
+                <div class="input-group1">
+                    <label for="bas1a">Bas 1 Notunuzu Giriniz:</label>
+                    <input type="number" id="bas1a" placeholder="Notunuzu girin">
+                </div>
+                <div class="input-group1">
+                    <label for="bas2a">Bas 2 Notunuzu Giriniz:</label>
+                    <input type="number" id="bas2a" placeholder="Notunuzu girin">
+                </div>
+                <div class="input-group1">
+                    <label for="bas3a">Bas 3 Notunuzu Giriniz:</label>
+                    <input type="number" id="bas3a" placeholder="Notunuzu girin">
+                </div>
+                <div class="input-group1">
+                    <label for="hist1">Histoloji Uygulama Notunuzu Giriniz:</label>
+                    <input type="number" id="hist1" placeholder="Notunuzu girin">
+                </div>
+                <div class="input-group1">
+                    <label for="bio1">Tıbbi Biyoloji Uygulama Notunuzu Giriniz:</label>
+                    <input type="number" id="bio1" placeholder="Notunuzu girin">
+                </div>
+                <div class="input-group1">
+                    <label for="bky1">Tıbbi Biyokimya Uygulama Notunuzu Giriniz:</label>
+                    <input type="number" id="bky1" placeholder="Notunuzu girin">
+                </div>
+                <div class="input-group1">
+                    <label for="halk1">Halk Sağlığı Uygulama Notunuzu Giriniz:</label>
+                    <input type="number" id="halk1" placeholder="Notunuzu girin">
+                </div>
+
+                <div class="input-group1">
+                    <label for="ant1">Anatomi Uygulama Notunuzu Giriniz:</label>
+                    <input type="number" id="ant1" placeholder="Notunuzu girin">
+                </div>
+                <div class="input-group1">
+                    <label for="bys1">BYS Notunuzu Giriniz:</label>
+                    <input type="number" id="bys1" placeholder="Notunuzu girin">
+                </div>
+                <button id="calculateBtn1">Hesapla</button>
+                <div class="resultx1" id="result1"></div>
+            </div>
+            <script>
+                function calculater1() {
+                    // Kullanıcıdan değeri al
+            const bas1a = document.getElementById("bas1a").value;
+            const bas2a = document.getElementById("bas2a").value;
+            const bas3a = document.getElementById("bas3a").value;
+            const hist1 = document.getElementById("hist1").value;
+            const bky1 = document.getElementById("bky1").value;
+            const halk1 = document.getElementById("halk1").value;
+            const bio1 = document.getElementById("bio1").value;
+            const ant1 = document.getElementById("ant1").value;
+            const bys1 = document.getElementById("bys1").value;
+        
+        
+            // Eğer değer boş ise uyarı ver
+            if (!bas1a || !bas2a || !bas3a || !hist1 || !bio1 || !ant1 || !bys1 || !bky1 || !halk1) {
+                document.getElementById("result1").innerText = "Lütfen Puanınızı girin!";
+                return;
+            }
+        
+            // İşlemi gerçekleştir (örneğin, sayının karesini hesapla)
+            a=((parseFloat(bas1a) + parseFloat(bas2a) + parseFloat(bas3a) )/3)/4
+            b= ((parseFloat(hist1)*16)/100 + (parseFloat(bio1)*38)/100 + (parseFloat(bky1)*32)/100 + (parseFloat(halk1)*10)/100+ (parseFloat(ant1)*4)/100)/4
+            c= parseFloat(bys1)/2 
+            const result1 = a + b + c ;
+        
+            if (result1>=59.5) {
+                document.getElementById("result1").innerText = `Tebrikler Bloğu Geçtiniz. Puanınız: ${result1}`;
+                return;
+            }
+            else{
+                document.getElementById("result1").innerText = `Puanınız: ${result1}`;
+            }
+        }
+        function sifirla1() {
+            bas1a.value ="";
+            bas2a.value ="";
+            bas3a.value ="";
+            hist1.value ="";
+            bky1.value ="";
+            halk1.value ="";
+            bio1.value ="";
+            ant1.value ="";
+            bys1.value ="";
+            result1.innerText= "";
+            }
+
+
+
+
+            document.addEventListener("keydown", function(event) {
+            if (event.key === "Enter") {
+            calculater1();
+            }else if (event.key === " ") {
+        event.preventDefault(); 
+        sifirla1();
+       }
+            });
+            document.getElementById("calculateBtn1").addEventListener("click", calculater1);
+            
+        
+        
+        
+        </script>
+            
+        </body>
+        </html>
+        
+         <button class="button2" onclick="showMain()">Ana Sayfaya Dön</button>
+    </div>
+
+
+     <!-- Hedef İçerik-4 ysys -->
+     <div id="target-content4" class="content hidden">
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>YSYS</title>
+            <style>
+            /* Genel stil */
+        body { /* ana renk burda<-----------*/
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #432746; /* Açık gri bir arka plan rengi */
+            color: #333; /* Yazılar koyu gri */
+            
+        }
+        
+        /* Ana kapsayıcı */
+        .container1p {
+            max-width: 500px;
+            margin: 60px auto;
+            padding: 30px;
+            background: #8ceab3; /* Beyaz arka plan */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden; /* Taşmayı engelle */
+            box-sizing: border-box;
+            
+            
+        }
+        
+        /* Başlık stili */
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #007BFF; /* Mavi renk başlık */
+        }
+        
+        /* Giriş alanı grubu */
+        .input-group1 {
+            margin-bottom: 15px;
+        }
+        
+        .input-group1 label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            font-size: 16px;
+            color: #333; /* Koyu gri etiket */
+        }
+        
+        .input-group1 input {
+            width: 100%; /* Kapsayıcının genişliğini aşmaz */
+            max-width: 100%; /* Taşmayı tamamen engeller */
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ddd; /* İnce bir kenarlık */
+            border-radius: 7px;
+            box-sizing: border-box; /* Padding ve genişlik çakışmasını engeller */
+            background-color: #f9f9f9; /* Hafif gri arka plan */
+            color: #333; /* Koyu gri metin */
+        }
+        
+        /* Hesaplama butonu */
+        button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+        
+        /* Sonuç kutusu */
+        .resultxa1 {
+            margin-top: 15px;
+            padding: 10px;
+            background: #fbd1ae; /* Hafif gri arka plan */
+            color: #242424; /* Siyah yazı */
+            border-radius: 10px;
+            text-align: center;
+            
+            border: 1px solid #98ffb5; /* İnce bir kenarlık */
+        }
+        
+        /* Mobil uyum için medya sorguları */
+        @media screen and (max-width: 800px) {
+            .container1p {
+                margin: 20px;
+                padding: 15px;
+            }
+            h1 {
+                font-size: 20px;
+            }
+            button {
+                font-size: 14px;
+            }
+        }
+            </style>
+        </head>
+        <body>
+            <div class="container1p">
+                <h2>YSYS Puanı Hesaplama</h2>
+                <div class="input-group1">
+                    <label for="blok1">1.Blok Not Ortalamanızı Giriniz:</label>
+                    <input type="number" id="blok1" placeholder="Notunuzu girin">
+                </div>
+                <div class="input-group1">
+                    <label for="blok2">2.Blok Not Ortalamanızı Giriniz:</label>
+                    <input type="number" id="blok2" placeholder="Notunuzu girin">
+                </div>
+                <div class="input-group1">
+                    <label for="blok3">3.Blok Not Ortalamanızı Giriniz:</label>
+                    <input type="number" id="blok3" placeholder="Notunuzu girin">
+                </div>
+                <div class="input-group1">
+                    <label for="YSYS">YSYS Notunuzu Giriniz:</label>
+                    <input type="number" id="YSYS" placeholder="Notunuzu girin">
+                </div>
+                <div class="input-group1">
+                    <label for="sorusayisi">YSYS'de Kaç Soru Olduğunu Giriniz:</label>
+                    <input type="number" id="sorusayisi" placeholder="Notunuzu girin">
+                </div>
+                
+                <button id="calculateBtn01">Hesapla</button>
+                <div class="resultxa1" id="resultxa1"></div>
+            </div>
+            <script>
+                function calculater() 
+            {
+                    // Kullanıcıdan değeri al
+            const blok1 = document.getElementById("blok1").value;
+            const blok2 = document.getElementById("blok2").value;
+            const blok3 = document.getElementById("blok3").value;
+            const YSYS = document.getElementById("YSYS").value;
+            const sorusayisi = document.getElementById("sorusayisi").value;
+
+            if (!blok1 || !blok2 || !blok3 || !YSYS || !sorusayisi) {
+                document.getElementById("resultxa1").innerText = "Lütfen Puanınızı girin!";
+                return;
+            }
+
+            a=(((parseFloat(blok1) + parseFloat(blok2) + parseFloat(blok3) )/3)*65)/100
+            b= (parseFloat(YSYS)*35)/100
+            c=(parseFloat(YSYS)*parseFloat(sorusayisi))/100
+            const resultxa1 = a + b;
+            const sayi=c;
+            if (resultxa1>=59.5) {
+                document.getElementById("resultxa1").innerText = `Doğru Soru Sayısı: ${sayi} - Puanınız: ${resultxa1}`;
+                return;
+            }
+            else{
+                document.getElementById("resultxa1").innerText = `Doğru Soru Sayısı: ${sayi} - Puanınız: ${resultxa1}`;
+            }
+            }
+            function sifirla() {
+            blok1.value = "";
+            blok2.value = "";
+            blok3.value= "";
+            YSYS.value= "";
+            sorusayisi.value = "";
+            resultxa1.innerText= "";
+            }
+
+         document.addEventListener("keydown", function(event) {
+           if (event.key === "Enter") {
+            calculater();
+          } else if (event.key === " ") {
+        event.preventDefault(); 
+        sifirla();
+       }
+        });
+         document.getElementById("calculateBtn01").addEventListener("click",calculater );
+        </script>
+            
+        </body>
+        </html>
+         <button class="button2" onclick="showMain()">Ana Sayfaya Dön</button>
+    </div>
+    
+    <script>
+        // Hedef içeriği gösterme fonksiyonu
+        function showTarget() {
+            // Ana içeriği gizle
+            document.getElementById('main-content').classList.add('hidden');
+            document.getElementById('target-content2').classList.add('hidden');
+            document.getElementById('target-content3').classList.add('hidden');
+            document.getElementById('target-content4').classList.add('hidden');
+            document.getElementById('target-content5').classList.add('hidden');
+            document.getElementById('target-content6').classList.add('hidden');
+
+            // Hedef içeriği göster
+            document.getElementById('target-content').classList.remove('hidden');
+        }
+
+        function showTarget2() {
+            // Ana içeriği gizle
+            document.getElementById('main-content').classList.add('hidden');
+            document.getElementById('target-content').classList.add('hidden');
+            document.getElementById('target-content3').classList.add('hidden');
+            document.getElementById('target-content4').classList.add('hidden');
+            document.getElementById('target-content5').classList.add('hidden');
+            document.getElementById('target-content6').classList.add('hidden');
+
+            
+            // Hedef içeriği göster
+            document.getElementById('target-content2').classList.remove('hidden');
+        }
+
+        function showTarget3() {
+            // Ana içeriği gizle
+            document.getElementById('main-content').classList.add('hidden');
+            document.getElementById('target-content').classList.add('hidden');
+            document.getElementById('target-content2').classList.add('hidden');
+            document.getElementById('target-content4').classList.add('hidden');
+            document.getElementById('target-content5').classList.add('hidden');
+            document.getElementById('target-content6').classList.add('hidden');
+            // Hedef içeriği göster
+            document.getElementById('target-content3').classList.remove('hidden');
+        }
+        function showTarget4() {
+            // Ana içeriği gizle
+            document.getElementById('main-content').classList.add('hidden');
+            document.getElementById('target-content').classList.add('hidden');
+            document.getElementById('target-content2').classList.add('hidden');
+            document.getElementById('target-content3').classList.add('hidden');
+            document.getElementById('target-content5').classList.add('hidden');
+            document.getElementById('target-content6').classList.add('hidden');
+            // Hedef içeriği göster
+            document.getElementById('target-content4').classList.remove('hidden');
+        }
+        function showTarget5() {
+            // Ana içeriği gizle
+            document.getElementById('main-content').classList.add('hidden');
+            document.getElementById('target-content').classList.add('hidden');
+            document.getElementById('target-content2').classList.add('hidden');
+            document.getElementById('target-content3').classList.add('hidden');
+            document.getElementById('target-content4').classList.add('hidden');
+            document.getElementById('target-content6').classList.add('hidden');
+            // Hedef içeriği göster
+            document.getElementById('target-content5').classList.remove('hidden');
+        }
+
+        function showTarget6() {
+            // Ana içeriği gizle
+            document.getElementById('main-content').classList.add('hidden');
+            document.getElementById('target-content').classList.add('hidden');
+            document.getElementById('target-content2').classList.add('hidden');
+            document.getElementById('target-content3').classList.add('hidden');
+            document.getElementById('target-content4').classList.add('hidden');
+            document.getElementById('target-content5').classList.add('hidden');
+            // Hedef içeriği göster
+            document.getElementById('target-content6').classList.remove('hidden');
+        }
+        // Ana içeriği gösterme fonksiyonu
+        function showMain() {
+            // Hedef içeriği gizle
+            document.getElementById('target-content').classList.add('hidden');
+            document.getElementById('target-content2').classList.add('hidden');
+            document.getElementById('target-content3').classList.add('hidden');
+            document.getElementById('target-content4').classList.add('hidden');
+            document.getElementById('target-content5').classList.add('hidden');
+            document.getElementById('target-content6').classList.add('hidden');
+            // Ana içeriği göster
+            document.getElementById('main-content').classList.remove('hidden');
+        }
+        function showMessage() {
+            alert("Herkese merhaba arkadaşlar. Ben dönem 3 öğrencilerinden Zeki. Bildiğiniz gibi bizim fakültede hangi sınavdan kaç alacağımızın blok sonu puanımızı nasıl değiştireceğini hesaplamak biraz uğraştırıcı ve zor. Bu yüzden bizim direkt puanımızı yazarak sonucu nasıl etkileyeceğini görebileceğimiz bir web sitesi tasarladım. Umarım işinize yarar. Kolay gelsin herkese.");
+        }
+    </script>
+    <div class="logo" onclick="showMessage()">-ZEK!</div>
+</body>
+</html>
