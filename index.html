@@ -62,10 +62,25 @@
 .logo {
     position: fixed; /* Sayfada sabitlenir */
     bottom: 10px; /* Sağ alt köşeden 10px yukarı */
-    right: 10px; /* Sağ alt köşeden 10px sola */
+    right: 40px; /* Sağ alt köşeden 10px sola */
     background-color: #c5e0ff; /* Logo için mavi arka plan */
     color: rgb(0, 0, 0); /* Yazı rengi beyaz */
     font-size: 14px; /* Yazı boyutu */
+    font-weight: bold; /* Kalın yazı */
+    padding: 8px 12px; /* İç boşluk */
+    border-radius: 5px; /* Köşeleri yuvarlama */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Hafif gölge */
+    z-index: 1000; /* Diğer içeriklerin üstünde göster */
+    text-align: center; /* Yazıyı ortala */
+    cursor: pointer; /* Üzerine gelince el işareti */
+}
+.logoUyarı {
+    position: fixed; /* Sayfada sabitlenir */
+    bottom: 10px; /* Sağ alt köşeden 10px yukarı */
+    right: 10px; /* Sağ alt köşeden 10px sola */
+    background-color: #f8a0b6; /* Logo için mavi arka plan */
+    color: rgb(0, 0, 0); /* Yazı rengi beyaz */
+    font-size: 12px; /* Yazı boyutu */
     font-weight: bold; /* Kalın yazı */
     padding: 8px 12px; /* İç boşluk */
     border-radius: 5px; /* Köşeleri yuvarlama */
@@ -92,15 +107,20 @@
     <div id="main-content" class="content">
         <h1 style="color: #F2F200 ;">Ege Üniversitesi Tıp Fakültesi Puan Hesaplama Sistemine Hoş Geldiniz!</h1>
         <h3 style="color: #a6a66f ;">(Enter: Hesapla - Space: Sıfırla)</h3>
+        
+        
         <button class="button" onclick="showTarget2()">E1B1</button>
         <button class="button" onclick="showTarget7()">E2B1</button>
         <button class="button" onclick="showTarget8()">E2B2</button>
         <h2 style="color: #e09f9f ;">1. Sınıf</h2>
+        
         <button class="button" onclick="showTarget()">E2B3</button>
         <button class="button" onclick="showTarget3()">E2B4</button>
         <button class="button" onclick="showTarget5()">E3B1</button>
         <h2 style="color: #e09f9f ;">2. Sınıf</h2>
+        
         <button class="button" onclick="showTarget6()">E4B1</button>
+        <button class="button" onclick="showTarget9()">E4B2</button>
         <h2 style="color: #e09f9f ;">3. Sınıf</h2>
         <button class="button" onclick="showTarget4()">YSYS</button>
     </div>
@@ -310,7 +330,7 @@
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>E2B4</title>
+            <title>E4B1</title>
             <style>
             /* Genel stil */
         body {
@@ -495,6 +515,194 @@
       }else if (event.key === " ") {
         event.preventDefault(); 
         sifirla4();
+       }
+    });
+            </script>
+        </body>
+        </html>
+        <button class="button2" onclick="showMain()">Ana Sayfaya Dön</button>
+    </div>
+    
+    <!-- Hedef İçerik e4b2 -->
+    <div id="target-content9" class="content hidden">
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>E4B2</title>
+            <style>
+            /* Genel stil */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #3f3ffb; /* Açık gri bir arka plan rengi */
+            color: #333; /* Yazılar koyu gri */
+        }
+        
+        /* Ana kapsayıcı */
+        .containerAyz {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #67cfc6; /* Beyaz arka plan */ /**************************/
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden; /* Taşmayı engelle */
+            box-sizing: border-box;
+        }
+        
+        /* Başlık stili */
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #007BFF; /* Mavi renk başlık */
+        }
+        
+        /* Giriş alanı grubu */
+        .input-group {
+            margin-bottom: 15px;
+        }
+        
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            font-size: 16px;
+            color: #333; /* Koyu gri etiket */
+        }
+        
+        .input-group input {
+            width: 100%; /* Kapsayıcının genişliğini aşmaz */
+            max-width: 100%; /* Taşmayı tamamen engeller */
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ddd; /* İnce bir kenarlık */
+            border-radius: 5px;
+            box-sizing: border-box; /* Padding ve genişlik çakışmasını engeller */
+            background-color: #f9f9f9; /* Hafif gri arka plan */
+            color: #333; /* Koyu gri metin */
+        }
+        
+        /* Hesaplama butonu */
+        button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+        
+        /* Sonuç kutusu */
+        .resultxAyz {
+            margin-top: 15px;
+            padding: 10px;
+            background: #f3ffc6; /* Hafif gri arka plan */
+            color: #242424; /* Siyah yazı */
+            border-radius: 5px;
+            text-align: center;
+            border: 1px solid #ebebeb; /* İnce bir kenarlık */
+        }
+        
+        /* Mobil uyum için medya sorguları */
+        @media screen and (max-width: 600px) {
+            .containerAyz {
+                margin: 20px;
+                padding: 15px;
+            }
+            h1 {
+                font-size: 20px;
+            }
+            button {
+                font-size: 14px;
+            }
+        }
+        
+        
+        
+            </style>
+        </head>
+        <body>
+            <div class="containerAyz">
+                <h2>E4B2 Blok Sonu Başarı Puanı Hesaplama</h2>
+                <div class="input-group">
+                    <label for="bas1xAyz">Bas 1 Notunuzu Giriniz:</label>
+                    <input type="number" id="bas1xAyz" placeholder="Notunuzu girin">
+                </div>
+                <div class="input-group">
+                    <label for="bas2xAyz">Bas 2 Notunuzu Giriniz:</label>
+                    <input type="number" id="bas2xAyz" placeholder="Notunuzu girin">
+                </div>
+                <div class="input-group">
+                    <label for="HalkSagligiZ">Halk Sağlığı Uygulama Notunuzu Giriniz:</label>
+                    <input type="number" id="HalkSagligiZ" placeholder="Notunuzu girin">
+                </div>
+                <div class="input-group">
+                    <label for="PatolojiZ">Patoloji Uygulama Notunuzu Giriniz:</label>
+                    <input type="number" id="PatolojiZ" placeholder="Notunuzu girin">
+                </div>
+                <div class="input-group">
+                    <label for="BYSZ">BYS Notunuzu Giriniz:</label>
+                    <input type="number" id="BYSZ" placeholder="Notunuzu girin">
+                </div>
+                <button id="calculateBtnxAyz">Hesapla</button>
+                <div class="resultxAyz" id="resultxAyz"></div>
+            </div>
+            <script>
+                 function calculater4Z() {
+            // Kullanıcıdan değeri al
+            const bas1xAyz = document.getElementById("bas1xAyz").value;
+            const bas2xAyz = document.getElementById("bas2xAyz").value;
+            const HalkSagligiZ = document.getElementById("HalkSagligiZ").value;
+            const PatolojiZ = document.getElementById("PatolojiZ").value;
+            const BYSZ = document.getElementById("BYSZ").value;
+        
+        
+            // Eğer değer boş ise uyarı ver
+            if (!bas1xAyz || !bas2xAyz || !HalkSagligiZ || !PatolojiZ || !BYSZ ) {
+                document.getElementById("resultxAyz").innerText = "Lütfen Puanınızı giriniz!";
+                return;
+            }
+            // İşlemi gerçekleştir (örneğin, sayının karesini hesapla)
+            a=((parseFloat(bas1xAyz) + parseFloat(bas2xAyz))/2)/4
+            b= ((parseFloat(HalkSagligiZ)*25)/100 + (parseFloat(PatolojiZ)*75)/100)/4
+            c= parseFloat(BYSZ)/2
+            const resultxAyz = a + b + c ;
+        
+            if (resultxAyz>=59.5) {
+                document.getElementById("resultxAyz").innerText = `Tebrikler Bloğu Geçtiniz. Puanınız: ${resultxAyz}`;
+                return;
+            }
+            else{
+                document.getElementById("resultxAyz").innerText = `Puanınız: ${resultxAyz}`;
+            }
+        }
+        function sifirla4Z(){
+             bas1xAyz.value="";
+             bas2xAyz.value="";
+             HalkSagligiZ.value="";
+             PatolojiZ.value="";
+             BYSZ.value="";
+             resultxAyz.innerText="";
+        }
+                 document.getElementById("calculateBtnxAyz").addEventListener("click",calculater4Z);
+        document.addEventListener("keydown", function(event) {
+      if (event.key === "Enter") {
+        calculater4Z();
+      }else if (event.key === " ") {
+        event.preventDefault(); 
+        sifirla4Z();
        }
     });
             </script>
@@ -1809,6 +2017,7 @@
             document.getElementById('target-content6').classList.add('hidden');
             document.getElementById('target-content7').classList.add('hidden');
             document.getElementById('target-content8').classList.add('hidden');
+            document.getElementById('target-content9').classList.add('hidden');
 
             // Hedef içeriği göster
             document.getElementById('target-content').classList.remove('hidden');
@@ -1824,6 +2033,8 @@
             document.getElementById('target-content6').classList.add('hidden');
             document.getElementById('target-content7').classList.add('hidden');
             document.getElementById('target-content8').classList.add('hidden');
+            document.getElementById('target-content9').classList.add('hidden');
+
 
             
             // Hedef içeriği göster
@@ -1840,6 +2051,8 @@
             document.getElementById('target-content6').classList.add('hidden');
             document.getElementById('target-content7').classList.add('hidden');
             document.getElementById('target-content8').classList.add('hidden');
+            document.getElementById('target-content9').classList.add('hidden');
+
             // Hedef içeriği göster
             document.getElementById('target-content3').classList.remove('hidden');
         }
@@ -1853,6 +2066,8 @@
             document.getElementById('target-content6').classList.add('hidden');
             document.getElementById('target-content7').classList.add('hidden');
             document.getElementById('target-content8').classList.add('hidden');
+            document.getElementById('target-content9').classList.add('hidden');
+
             // Hedef içeriği göster
             document.getElementById('target-content4').classList.remove('hidden');
         }
@@ -1866,6 +2081,8 @@
             document.getElementById('target-content6').classList.add('hidden');
             document.getElementById('target-content7').classList.add('hidden');
             document.getElementById('target-content8').classList.add('hidden');
+            document.getElementById('target-content9').classList.add('hidden');
+
             // Hedef içeriği göster
             document.getElementById('target-content5').classList.remove('hidden');
         }
@@ -1880,6 +2097,8 @@
             document.getElementById('target-content5').classList.add('hidden');
             document.getElementById('target-content7').classList.add('hidden');
             document.getElementById('target-content8').classList.add('hidden');
+            document.getElementById('target-content9').classList.add('hidden');
+
             // Hedef içeriği göster
             document.getElementById('target-content6').classList.remove('hidden');
         }
@@ -1893,6 +2112,8 @@
             document.getElementById('target-content5').classList.add('hidden');
             document.getElementById('target-content6').classList.add('hidden');
             document.getElementById('target-content8').classList.add('hidden');
+            document.getElementById('target-content9').classList.add('hidden');
+
             // Hedef içeriği göster
             document.getElementById('target-content7').classList.remove('hidden');
         }
@@ -1906,8 +2127,25 @@
             document.getElementById('target-content5').classList.add('hidden');
             document.getElementById('target-content6').classList.add('hidden');
             document.getElementById('target-content7').classList.add('hidden');
+            document.getElementById('target-content9').classList.add('hidden');
+
             // Hedef içeriği göster
             document.getElementById('target-content8').classList.remove('hidden');
+        }
+        function showTarget9() {
+            // Ana içeriği gizle
+            document.getElementById('main-content').classList.add('hidden');
+            document.getElementById('target-content').classList.add('hidden');
+            document.getElementById('target-content2').classList.add('hidden');
+            document.getElementById('target-content3').classList.add('hidden');
+            document.getElementById('target-content4').classList.add('hidden');
+            document.getElementById('target-content5').classList.add('hidden');
+            document.getElementById('target-content6').classList.add('hidden');
+            document.getElementById('target-content7').classList.add('hidden');
+            document.getElementById('target-content8').classList.add('hidden');
+
+            // Hedef içeriği göster
+            document.getElementById('target-content9').classList.remove('hidden');
         }
         // Ana içeriği gösterme fonksiyonu
         function showMain() {
@@ -1920,14 +2158,18 @@
             document.getElementById('target-content6').classList.add('hidden');
             document.getElementById('target-content7').classList.add('hidden');
             document.getElementById('target-content8').classList.add('hidden');
+            document.getElementById('target-content9').classList.add('hidden');
             // Ana içeriği göster
             document.getElementById('main-content').classList.remove('hidden');
         }
         function showMessage() {
             alert("Herkese merhaba arkadaşlar. Ben EÜTF öğrencilerinden Zeki. Bildiğiniz gibi bizim fakültede hangi sınavdan kaç alacağımızın blok sonu puanımızı nasıl değiştireceğini hesaplamak biraz uğraştırıcı ve zor. Bu yüzden bizim direkt puanımızı yazarak sonucu nasıl etkileyeceğini görebileceğimiz bir web sitesi tasarladım. Umarım işinize yarar. Kolay gelsin herkese.");
         }
+        function showMessage2() {
+            alert(" ÖNEMLİ UYARI --> Bu sitede yapılan hesaplama sonucu, en son bilinen uygulama yüzde oranlarıyla yapılmıştır. Uygulama yüzdelerinin değişmesi nedeniyle puanınız düşük yada yüksek çıkabilir. Bu site sadece size yardımcı olması için var. Tamamıyla bu siteye dayanarak çalışmanızdan dolayı yaşayacağınız her türlü mağduriyet sizin sorumluluğunuzdadır. Siteyi kullanarak bunu kabul etmiş sayılırsınız.");
+        }
     </script>
-    <div class="logo" onclick="showMessage()">-ZEK!</div>
+    <div class="logo" onclick="showMessage()">ZEK</div>
+    <div class="logoUyarı" onclick="showMessage2()"><b>İ</b></div>
 </body>
 </html>
-
