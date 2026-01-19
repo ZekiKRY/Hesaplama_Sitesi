@@ -89,7 +89,24 @@
     text-align: center; /* Yazıyı ortala */
     cursor: pointer; /* Üzerine gelince el işareti */
 }
+.QRCode {
+    position: absolute; /* Sayfaya sabitlenmez, içeriğe göre konumlanır */
+    bottom: 10px; /* Alt kenardan 10px yukarı */
+    left: 10px; /* Sol kenardan 10px sağa */
+    background-color: #fafafa; 
+    color: rgb(0, 0, 0); 
+    font-size: 25px; 
+    font-weight: bold; 
+    padding: 8px 12px; 
+    border-radius: 5px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    z-index: 1000; 
+    text-align: center; 
+    cursor: pointer;
 
+    text-decoration: none; /* Alt çizgiyi kaldırır */
+    display: inline-block; /* Padding ve boyutların doğru çalışmasını sağlar */
+}
     </style>
 
     <!-- Google tag (gtag.js) -->
@@ -104,7 +121,8 @@
 </head>
 <body>
     <!-- Ana İçerik -->
-    <div id="main-content" class="content">
+    <div id="main-content" >
+        <div class="content">
         <h1 style="color: #F2F200 ;">Ege Üniversitesi Tıp Fakültesi Puan Hesaplama Sistemine Hoş Geldiniz!</h1>
         <h3 style="color: #a6a66f ;">(Enter: Hesapla - Space: Sıfırla)</h3>
         
@@ -123,7 +141,12 @@
         <button class="button" onclick="showTarget9()">E4B2</button>
         <h2 style="color: #e09f9f ;">3. Sınıf</h2>
         <button class="button" onclick="showTarget4()">YSYS</button>
+
+        </div>
+
+        <a class="QRCode"  href="https://zekikry.github.io/QR-Code-Generator/"><b>QR</b></a>
     </div>
+    
 
     <!-- Hedef İçerik e2b3 -->
     <div id="target-content" class="content hidden">
@@ -2173,4 +2196,3 @@
     <div class="logoUyarı" onclick="showMessage2()"><b>İ</b></div>
 </body>
 </html>
-
