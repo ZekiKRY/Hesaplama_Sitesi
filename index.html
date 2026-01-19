@@ -74,21 +74,6 @@
     text-align: center; /* Yazıyı ortala */
     cursor: pointer; /* Üzerine gelince el işareti */
 }
-.logoUyarı {
-    position: fixed; /* Sayfada sabitlenir */
-    bottom: 10px; /* Sağ alt köşeden 10px yukarı */
-    right: 10px; /* Sağ alt köşeden 10px sola */
-    background-color: #f8a0b6; /* Logo için mavi arka plan */
-    color: rgb(0, 0, 0); /* Yazı rengi beyaz */
-    font-size: 12px; /* Yazı boyutu */
-    font-weight: bold; /* Kalın yazı */
-    padding: 8px 12px; /* İç boşluk */
-    border-radius: 5px; /* Köşeleri yuvarlama */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Hafif gölge */
-    z-index: 1000; /* Diğer içeriklerin üstünde göster */
-    text-align: center; /* Yazıyı ortala */
-    cursor: pointer; /* Üzerine gelince el işareti */
-}
 .QRCode {
     position: absolute; /* Sayfaya sabitlenmez, içeriğe göre konumlanır */
     bottom: 10px; /* Alt kenardan 10px yukarı */
@@ -2186,13 +2171,9 @@
             document.getElementById('main-content').classList.remove('hidden');
         }
         function showMessage() {
-            alert("Herkese merhaba arkadaşlar. Ben EÜTF öğrencilerinden Zeki. Bildiğiniz gibi bizim fakültede hangi sınavdan kaç alacağımızın blok sonu puanımızı nasıl değiştireceğini hesaplamak biraz uğraştırıcı ve zor. Bu yüzden bizim direkt puanımızı yazarak sonucu nasıl etkileyeceğini görebileceğimiz bir web sitesi tasarladım. Umarım işinize yarar. Kolay gelsin herkese.");
-        }
-        function showMessage2() {
-            alert(" ÖNEMLİ UYARI --> Bu sitede yapılan hesaplama sonucu, en son bilinen uygulama yüzde oranlarıyla yapılmıştır. Uygulama yüzdelerinin değişmesi nedeniyle puanınız düşük yada yüksek çıkabilir. Bu site sadece size yardımcı olması için var. Tamamıyla bu siteye dayanarak çalışmanızdan dolayı yaşayacağınız her türlü mağduriyet sizin sorumluluğunuzdadır. Siteyi kullanarak bunu kabul etmiş sayılırsınız.");
+            alert("Herkese merhaba arkadaşlar. Ben EÜTF öğrencilerinden Zeki. Bildiğiniz gibi bizim fakültede hangi sınavdan kaç alacağımızın blok sonu puanımızı nasıl değiştireceğini hesaplamak biraz uğraştırıcı ve zor. Bu yüzden bizim direkt puanımızı yazarak sonucu nasıl etkileyeceğini görebileceğimiz bir web sitesi tasarladım. Umarım işinize yarar. Kolay gelsin herkese. ÖNEMLİ UYARI --> Bu sitede yapılan hesaplama sonucu, en son bilinen uygulama yüzde oranlarıyla yapılmıştır. Uygulama yüzdelerinin değişmesi nedeniyle puanınız düşük yada yüksek çıkabilir.");
         }
     </script>
-    <div class="logo" onclick="showMessage()">ZEK</div>
-    <div class="logoUyarı" onclick="showMessage2()"><b>İ</b></div>
+    <div class="logo" onclick="showMessage()">ZEKI</div>
 </body>
 </html>
