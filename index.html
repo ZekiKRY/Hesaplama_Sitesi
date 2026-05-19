@@ -143,6 +143,7 @@
         <button class="button" onclick="showTarget6()">E4B1</button>
         <button class="button" onclick="showTarget9()">E4B2</button>
         <button class="button" onclick="showTarget10()">E4B3</button>
+        <button class="button" onclick="showTarget11()">E4B4</button>
         <h2 style="color: #e09f9f ;">3. Sınıf</h2>
         <button class="button" onclick="showTarget4()">YSYS</button>
 
@@ -918,6 +919,199 @@
       }else if (event.key === " ") {
         event.preventDefault(); 
         sifirla4Z10();
+       }
+    });
+            </script>
+        </body>
+        </html>
+        <button class="button2" onclick="showMain()">Ana Sayfaya Dön</button>
+    </div>
+    <!-- Hedef İçerik e4b4 -->
+    <div id="target-content11" class="content hidden">
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>E4B4</title>
+            <style>
+            /* Genel stil */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #3f3ffb; /* Açık gri bir arka plan rengi */
+            color: #333; /* Yazılar koyu gri */
+        }
+        
+        /* Ana kapsayıcı */
+        .containerAyz11 {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #acacac; /* Beyaz arka plan */ /**************************/
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden; /* Taşmayı engelle */
+            box-sizing: border-box;
+        }
+        
+        /* Başlık stili */
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #007BFF; /* Mavi renk başlık */
+        }
+        
+        /* Giriş alanı grubu */
+        .input-group {
+            margin-bottom: 15px;
+        }
+        
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            font-size: 16px;
+            color: #333; /* Koyu gri etiket */
+        }
+        
+        .input-group input {
+            width: 100%; /* Kapsayıcının genişliğini aşmaz */
+            max-width: 100%; /* Taşmayı tamamen engeller */
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ddd; /* İnce bir kenarlık */
+            border-radius: 5px;
+            box-sizing: border-box; /* Padding ve genişlik çakışmasını engeller */
+            background-color: #f9f9f9; /* Hafif gri arka plan */
+            color: #333; /* Koyu gri metin */
+        }
+        
+        /* Hesaplama butonu */
+        button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+        
+        /* Sonuç kutusu */
+        .resultxAyz11 {
+            margin-top: 15px;
+            padding: 10px;
+            background: #f3ffc6; /* Hafif gri arka plan */
+            color: #242424; /* Siyah yazı */
+            border-radius: 5px;
+            text-align: center;
+            border: 1px solid #ebebeb; /* İnce bir kenarlık */
+        }
+        
+        /* Mobil uyum için medya sorguları */
+        @media screen and (max-width: 600px) {
+            .containerAyz11 {
+                margin: 20px;
+                padding: 15px;
+            }
+            h1 {
+                font-size: 20px;
+            }
+            button {
+                font-size: 14px;
+            }
+        }
+        
+        
+        
+            </style>
+        </head>
+        <body>
+            <div class="containerAyz11">
+                <h2>E4B4 Blok Sonu Başarı Puanı Hesaplama</h2>
+                <div class="input-group">
+                    <label for="bas1xAyz11">Bas 1 Notunuzu Giriniz:</label>
+                    <input type="number" id="bas1xAyz11" placeholder="Notunuzu girin">
+                </div>
+                <div class="input-group">
+                    <label for="bas2xAyz11">Bas 2 Notunuzu Giriniz:</label>
+                    <input type="number" id="bas2xAyz11" placeholder="Notunuzu girin">
+                </div>
+                <div class="input-group">
+                    <label for="HalkSagligiZ11">Halk Sağlığı Uygulama Notunuzu Giriniz (%14)</label>
+                    <input type="number" id="HalkSagligiZ11" placeholder="Notunuzu girin">
+                </div>
+                <div class="input-group">
+                    <label for="PatolojiZ11">Patoloji Uygulama Notunuzu Giriniz (%43)</label>
+                    <input type="number" id="PatolojiZ11" placeholder="Notunuzu girin">
+                </div>
+                <div class="input-group">
+                    <label for="BeceriZ11">Beceri Uygulama Notunuzu Giriniz (%43)</label>
+                    <input type="number" id="BeceriZ11" placeholder="Notunuzu girin">
+                </div>
+                <div class="input-group">
+                    <label for="BYSZ11">BYS Notunuzu Giriniz:</label>
+                    <input type="number" id="BYSZ11" placeholder="Notunuzu girin">
+                </div>
+                <button id="calculateBtnxAyz11">Hesapla</button>
+                <div class="resultxAyz11" id="resultxAyz11"></div>
+            </div>
+            <script>
+                 function calculater4Z11() {
+            // Kullanıcıdan değeri al
+            const bas1xAyz11 = document.getElementById("bas1xAyz11").value;
+            const bas2xAyz11 = document.getElementById("bas2xAyz11").value;
+            const HalkSagligiZ11 = document.getElementById("HalkSagligiZ11").value;
+            const PatolojiZ11 = document.getElementById("PatolojiZ11").value;
+            const BeceriZ11 = document.getElementById("BeceriZ11").value;
+            const BYSZ11 = document.getElementById("BYSZ11").value;
+        
+        
+            // Eğer değer boş ise uyarı ver
+            if (!bas1xAyz11 || !bas2xAyz11 || !HalkSagligiZ11 || !PatolojiZ11|| !BeceriZ11 || !BYSZ11 ) {
+                document.getElementById("resultxAyz11").innerText = "Lütfen Puanınızı giriniz!";
+                return;
+            }
+            // İşlemi gerçekleştir (örneğin, sayının karesini hesapla)
+            a=((parseFloat(bas1xAyz11) + parseFloat(bas2xAyz11))/2)/4
+            b= ((parseFloat(HalkSagligiZ11)*14)/100 + (parseFloat(PatolojiZ11)*43)/100 + ((parseFloat(BeceriZ11))*43)/100)/4
+            c= parseFloat(BYSZ11)/2
+            const resultxAyz11 = a + b + c ;
+        
+            if (resultxAyz11>=59.5) {
+                document.getElementById("resultxAyz11").innerText = `Tebrikler Bloğu Geçtiniz. Puanınız: ${resultxAyz11}`;
+                return;
+            }
+            else{
+                document.getElementById("resultxAyz11").innerText = `Puanınız: ${resultxAyz11}`;
+            }
+        }
+        function sifirla4Z11(){
+             bas1xAyz11.value="";
+             bas2xAyz11.value="";
+             HalkSagligiZ11.value="";
+             PatolojiZ11.value="";
+             BeceriZ11.value="";
+             BYSZ11.value="";
+             resultxAyz11.innerText="";
+        }
+                 document.getElementById("calculateBtnxAyz11").addEventListener("click",calculater4Z11);
+        document.addEventListener("keydown", function(event) {
+      if (event.key === "Enter") {
+        calculater4Z11();
+      }else if (event.key === " ") {
+        event.preventDefault(); 
+        sifirla4Z11();
        }
     });
             </script>
@@ -2232,6 +2426,7 @@
             document.getElementById('target-content8').classList.add('hidden');
             document.getElementById('target-content9').classList.add('hidden');
             document.getElementById('target-content10').classList.add('hidden');
+            document.getElementById('target-content11').classList.add('hidden');
 
             // Hedef içeriği göster
             document.getElementById('target-content').classList.remove('hidden');
@@ -2249,6 +2444,7 @@
             document.getElementById('target-content8').classList.add('hidden');
             document.getElementById('target-content9').classList.add('hidden');
             document.getElementById('target-content10').classList.add('hidden');
+            document.getElementById('target-content11').classList.add('hidden');
 
 
             
@@ -2268,6 +2464,7 @@
             document.getElementById('target-content8').classList.add('hidden');
             document.getElementById('target-content9').classList.add('hidden');
             document.getElementById('target-content10').classList.add('hidden');
+            document.getElementById('target-content11').classList.add('hidden');
 
             // Hedef içeriği göster
             document.getElementById('target-content3').classList.remove('hidden');
@@ -2284,6 +2481,7 @@
             document.getElementById('target-content8').classList.add('hidden');
             document.getElementById('target-content9').classList.add('hidden');
             document.getElementById('target-content10').classList.add('hidden');
+            document.getElementById('target-content11').classList.add('hidden');
 
             // Hedef içeriği göster
             document.getElementById('target-content4').classList.remove('hidden');
@@ -2300,6 +2498,8 @@
             document.getElementById('target-content8').classList.add('hidden');
             document.getElementById('target-content9').classList.add('hidden');
             document.getElementById('target-content10').classList.add('hidden');
+            document.getElementById('target-content11').classList.add('hidden');
+            document.getElementById('target-content11').classList.add('hidden');
 
             // Hedef içeriği göster
             document.getElementById('target-content5').classList.remove('hidden');
@@ -2317,6 +2517,7 @@
             document.getElementById('target-content8').classList.add('hidden');
             document.getElementById('target-content9').classList.add('hidden');
             document.getElementById('target-content10').classList.add('hidden');
+            document.getElementById('target-content11').classList.add('hidden');
 
             // Hedef içeriği göster
             document.getElementById('target-content6').classList.remove('hidden');
@@ -2333,6 +2534,7 @@
             document.getElementById('target-content8').classList.add('hidden');
             document.getElementById('target-content9').classList.add('hidden');
             document.getElementById('target-content10').classList.add('hidden');
+            document.getElementById('target-content11').classList.add('hidden');
 
 
             // Hedef içeriği göster
@@ -2350,6 +2552,7 @@
             document.getElementById('target-content7').classList.add('hidden');
             document.getElementById('target-content9').classList.add('hidden');
             document.getElementById('target-content10').classList.add('hidden');
+            document.getElementById('target-content11').classList.add('hidden');
 
 
             // Hedef içeriği göster
@@ -2367,6 +2570,7 @@
             document.getElementById('target-content7').classList.add('hidden');
             document.getElementById('target-content8').classList.add('hidden');
             document.getElementById('target-content10').classList.add('hidden');
+            document.getElementById('target-content11').classList.add('hidden');
 
             // Hedef içeriği göster
             document.getElementById('target-content9').classList.remove('hidden');
@@ -2384,9 +2588,27 @@
             document.getElementById('target-content7').classList.add('hidden');
             document.getElementById('target-content8').classList.add('hidden');
             document.getElementById('target-content9').classList.add('hidden');
+            document.getElementById('target-content11').classList.add('hidden');
 
             // Hedef içeriği göster
             document.getElementById('target-content10').classList.remove('hidden');
+        }
+        function showTarget11() {
+            // Ana içeriği gizle
+            document.getElementById('main-content').classList.add('hidden');
+            document.getElementById('target-content').classList.add('hidden');
+            document.getElementById('target-content2').classList.add('hidden');
+            document.getElementById('target-content3').classList.add('hidden');
+            document.getElementById('target-content4').classList.add('hidden');
+            document.getElementById('target-content5').classList.add('hidden');
+            document.getElementById('target-content6').classList.add('hidden');
+            document.getElementById('target-content7').classList.add('hidden');
+            document.getElementById('target-content8').classList.add('hidden');
+            document.getElementById('target-content9').classList.add('hidden');
+            document.getElementById('target-content10').classList.add('hidden');
+
+            // Hedef içeriği göster
+            document.getElementById('target-content11').classList.remove('hidden');
         }
 
 
@@ -2403,6 +2625,7 @@
             document.getElementById('target-content8').classList.add('hidden');
             document.getElementById('target-content9').classList.add('hidden');
             document.getElementById('target-content10').classList.add('hidden');
+            document.getElementById('target-content11').classList.add('hidden');
             // Ana içeriği göster
             document.getElementById('main-content').classList.remove('hidden');
         }
